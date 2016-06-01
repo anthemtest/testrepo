@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignmentRule>
-        <fullName>Standard</fullName>
+        <fullName>Assign Medium and High Cases to Support</fullName>
         <active>true</active>
+        <ruleEntry>
+            <assignedTo>Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Priority</field>
+                <operation>equals</operation>
+                <value>High,Medium</value>
+            </criteriaItems>
+            <template>unfiled$public/SupportCaseAssignmentNotification</template>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>Standard</fullName>
+        <active>false</active>
         <ruleEntry>
             <assignedTo>anthemdev1@accenture.com</assignedTo>
             <assignedToType>User</assignedToType>

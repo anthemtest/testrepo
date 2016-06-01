@@ -271,6 +271,18 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Queue_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Queue ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Reason</fullName>
         <picklist>
             <picklistValues>
@@ -356,6 +368,11 @@
             <picklistValues>
                 <fullName>Closed</fullName>
                 <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Reopen</fullName>
+                <closed>false</closed>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -458,6 +475,15 @@
             <value>0</value>
         </filters>
         <label>My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Support_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Support</label>
+        <queue>Support</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
